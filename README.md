@@ -1,7 +1,5 @@
 # Ignite Your Flare website
 
-Plain HTML and CSS. No builder, no framework, no monthly fee. The whole homepage is about 70 KB including the font, so it loads in well under a second on a phone.
-
 Every page keeps the same address it had on Google Sites (for example `/class-information/programs`), so Google rankings and old links carry over.
 
 ## Hosting: Cloudflare Pages (free)
