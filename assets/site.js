@@ -6,7 +6,7 @@
    2. Google Ads: paste your conversion ID (looks like AW-123456789) if you use one.
    Leave a value blank to switch that tag off. */
 
-var IYF_GA4_ID = "";        // e.g. "G-ABC123XYZ"
+var IYF_GA4_ID = "G-Y3RP7TK56Z";        // e.g. "G-ABC123XYZ"
 var IYF_GOOGLE_ADS_ID = ""; // e.g. "AW-123456789"
 
 (function () {
