@@ -15,12 +15,12 @@
   --wash: #f4edf6;         /* soft section background */
   --line: #e6dcea;         /* borders */
   --plum: #3a1446;         /* dark sections, primary buttons */
-  --violet: #6b2c7e;       /* uniform purple */
-  --link: #8a2c7c;
-  --sun-1: #f7b538;        /* the sunset door, top to bottom */
-  --sun-2: #ef6f51;
-  --sun-3: #d63e7a;
-  --sun-4: #7a3b9a;
+  --violet: #8a0fd6;       /* logo purple, button hover */
+  --link: #7a0fc0;
+  --sun-1: #ffac16;        /* brand gradient: logo orange, pink, purple, blue */
+  --sun-2: #f0606a;
+  --sun-3: #a011f4;
+  --sun-4: #3e80d0;
   --sunset: linear-gradient(180deg, var(--sun-1) 0%, var(--sun-2) 34%, var(--sun-3) 68%, var(--sun-4) 100%);
   --display: "Bricolage", "Avenir Next", "Segoe UI", system-ui, sans-serif;
   --body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -60,9 +60,9 @@ li { margin: .25em 0; }
 
 /* Header */
 .site-head { position: sticky; top: 0; z-index: 20; background: rgba(252,250,253,.94); backdrop-filter: saturate(1.4) blur(8px); border-bottom: 1px solid var(--line); }
-.head-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 68px; }
+.head-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 88px; padding-top: 4px; padding-bottom: 4px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--plum); }
-.brand svg { width: 30px; height: 38px; flex: none; }
+.brand img { height: 76px; width: auto; display: block; }
 .brand b { font-family: var(--display); font-weight: 760; font-size: 1.22rem; letter-spacing: -.01em; line-height: 1; }
 .brand span { display: block; font-size: .74rem; color: var(--muted); font-weight: 500; margin-top: 3px; }
 .nav { display: flex; align-items: center; gap: 4px; }
@@ -90,8 +90,10 @@ li { margin: .25em 0; }
   aspect-ratio: 3 / 4.2; border-radius: 999px 999px 18px 18px; position: relative; overflow: hidden;
   background: var(--sunset); box-shadow: 0 30px 60px -30px rgba(58,20,70,.55);
 }
-.door img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.door::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(58,20,70,.35)); pointer-events: none; }
+.door img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.door .door-mascot { object-fit: contain; padding: 14% 10% 8%; filter: drop-shadow(0 18px 30px rgba(58,20,70,.35)); }
+.door .door-photo { object-fit: cover; }
+.door::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 70%, rgba(58,20,70,.25)); pointer-events: none; }
 .door-note { margin-top: 12px; font-size: .9rem; color: var(--muted); text-align: center; }
 .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 26px 0 0; padding: 0; list-style: none; color: var(--muted); font-size: .97rem; }
 .facts li { margin: 0; }
@@ -111,14 +113,18 @@ section { padding: 64px 0; }
 .crumbs a { color: var(--muted); }
 
 /* Age ladder: a real sequence, so it gets a line */
-.ladder { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; position: relative; }
-.ladder::before { content: ""; position: absolute; left: 6%; right: 6%; top: 15px; height: 4px; border-radius: 4px; background: linear-gradient(90deg, var(--sun-1), var(--sun-2), var(--sun-3), var(--sun-4)); }
+.ladder { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; position: relative; align-items: start; }
+.ladder::before { content: ""; position: absolute; left: 6%; right: 6%; top: 118px; height: 4px; border-radius: 4px; background: linear-gradient(90deg, var(--sun-1), var(--sun-2), var(--sun-3), var(--sun-4)); }
 .ladder li { margin: 0; padding: 0 10px; text-align: center; position: relative; }
-.ladder .dot { width: 34px; height: 34px; border-radius: 50%; margin: 0 auto 14px; background: var(--paper); border: 4px solid var(--sun-3); position: relative; z-index: 1; }
-.ladder li:nth-child(1) .dot { border-color: var(--sun-1); }
-.ladder li:nth-child(2) .dot { border-color: var(--sun-2); }
-.ladder li:nth-child(4) .dot { border-color: #a93d8c; }
-.ladder li:nth-child(5) .dot { border-color: var(--sun-4); }
+.ladder .mascot { height: 112px; width: auto; max-width: 100%; margin: 0 auto 18px; display: block; object-fit: contain; object-position: bottom; position: relative; z-index: 1; }
+.ladder li:nth-child(1) .mascot { height: 64px; margin-top: 48px; }
+.ladder li:nth-child(2) .mascot { height: 76px; margin-top: 36px; }
+.ladder li:nth-child(3) .mascot { height: 88px; margin-top: 24px; }
+.ladder li:nth-child(4) .mascot { height: 100px; margin-top: 12px; }
+.mascot-name { display: block; font-size: .82rem; font-weight: 700; color: var(--sun-3); }
+.row-mascot { height: 44px; width: auto; display: block; margin-bottom: 6px; }
+.team-mascot { height: 96px; width: auto; display: block; margin-bottom: 10px; }
+.foot-mascot { height: 85px; width: auto; display: block; margin-bottom: 12px; }
 .ladder .age { font-family: var(--display); font-weight: 760; font-size: 1.5rem; color: var(--plum); display: block; line-height: 1.1; }
 .ladder .name { font-weight: 650; display: block; margin: 4px 0 6px; }
 .ladder p { font-size: .93rem; color: var(--muted); margin: 0; }
@@ -200,7 +206,6 @@ tbody th { font-weight: 680; color: var(--plum); white-space: nowrap; }
 .site-foot li { margin: 6px 0; }
 .foot-base { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.15); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: .88rem; color: #cdb8d3; }
 .foot-base a { color: #cdb8d3; }
-.foot-door { width: 46px; height: 62px; border-radius: 999px 999px 6px 6px; background: var(--sunset); margin-bottom: 14px; }
 
 /* Mobile */
 @media (max-width: 900px) {
@@ -212,9 +217,10 @@ tbody th { font-weight: 680; color: var(--plum); white-space: nowrap; }
   .hero-grid, .split { grid-template-columns: 1fr; gap: 32px; }
   .door { max-width: 360px; aspect-ratio: 3 / 3.4; margin: 0 auto; width: 100%; }
   .ladder { grid-template-columns: 1fr; gap: 22px; }
-  .ladder::before { left: 15px; right: auto; top: 10px; bottom: 10px; width: 4px; height: auto; background: linear-gradient(180deg, var(--sun-1), var(--sun-2), var(--sun-3), var(--sun-4)); }
-  .ladder li { display: grid; grid-template-columns: 34px 1fr; gap: 0 16px; text-align: left; padding: 0; }
-  .ladder .dot { margin: 0; grid-row: span 3; }
+  .ladder::before { left: 35px; right: auto; top: 10px; bottom: 10px; width: 4px; height: auto; background: linear-gradient(180deg, var(--sun-1), var(--sun-2), var(--sun-3), var(--sun-4)); }
+  .ladder li { display: grid; grid-template-columns: 72px 1fr; gap: 0 16px; text-align: left; padding: 0; align-items: center; }
+  .ladder .mascot, .ladder li:nth-child(n) .mascot { height: 64px; margin: 0 auto; grid-row: span 4; object-position: center; }
+  .brand img { height: 60px; }
   .cols, .cols-3, .quotes, .staff { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr 1fr; }
   .foot-grid { grid-template-columns: 1fr 1fr; }

@@ -1,15 +1,9 @@
-PHOTOS: drop these files into this folder (same names) and they appear automatically.
-Until then the site shows the sunset gradient or initials instead.
+Photos and brand art for the website.
 
-hero.jpg            Homepage arch. Portrait photo, about 900 x 1260 px. Dancers on stage works best.
-staff-krysta.jpg    Square headshots, about 300 x 300 px, for the Staff page.
-staff-lisa.jpg
-staff-katie.jpg
-staff-cassidy.jpg
-staff-kristi.jpg
-staff-erica.jpg
-staff-lily.jpg
-og.jpg              The preview image when the site is shared on Facebook or texted (1200 x 630).
+logo.webp / logo.png   Main logo (header, search results)
+mascots/               Glow, Ember, Spark, Scorch, Blaze (levels and teams), blaze-sticker (homepage, footer)
+hero.jpg               Optional homepage photo. If added, it covers the Blaze mascot in the homepage arch.
+staff-<firstname>.jpg  Staff headshots (krysta, lisa, katie, cassidy, kristi, erica, lily)
+og.jpg                 Preview image when the site is shared
 
-Keep each photo under about 200 KB so pages stay fast. squoosh.app compresses for free.
-Only use photos of students whose families have given media permission.
+To add or change photos, ask Claude (see the website SOP in Slack #landing-pages).
