@@ -117,10 +117,11 @@ section { padding: 64px 0; }
 .ladder::before { content: ""; position: absolute; left: 6%; right: 6%; top: 118px; height: 4px; border-radius: 4px; background: linear-gradient(90deg, var(--sun-1), var(--sun-2), var(--sun-3), var(--sun-4)); }
 .ladder li { margin: 0; padding: 0 10px; text-align: center; position: relative; }
 .ladder .mascot { height: 112px; width: auto; max-width: 100%; margin: 0 auto 18px; display: block; object-fit: contain; object-position: bottom; position: relative; z-index: 1; }
-.ladder li:nth-child(1) .mascot { height: 64px; margin-top: 48px; }
-.ladder li:nth-child(2) .mascot { height: 76px; margin-top: 36px; }
-.ladder li:nth-child(3) .mascot { height: 88px; margin-top: 24px; }
-.ladder li:nth-child(4) .mascot { height: 100px; margin-top: 12px; }
+/* Mascots grow from Glow to Blaze (sized by visible area, Blaze largest) */
+.ladder li:nth-child(1) .mascot { height: 57px; margin-top: 55px; }
+.ladder li:nth-child(2) .mascot { height: 68px; margin-top: 44px; }
+.ladder li:nth-child(3) .mascot { height: 92px; margin-top: 20px; }
+.ladder li:nth-child(4) .mascot { height: 108px; margin-top: 4px; }
 .mascot-name { display: block; font-size: .82rem; font-weight: 700; color: var(--sun-3); }
 .row-mascot { height: 44px; width: auto; display: block; margin-bottom: 6px; }
 .team-mascot { height: 96px; width: auto; display: block; margin-bottom: 10px; }
@@ -219,7 +220,12 @@ tbody th { font-weight: 680; color: var(--plum); white-space: nowrap; }
   .ladder { grid-template-columns: 1fr; gap: 22px; }
   .ladder::before { left: 35px; right: auto; top: 10px; bottom: 10px; width: 4px; height: auto; background: linear-gradient(180deg, var(--sun-1), var(--sun-2), var(--sun-3), var(--sun-4)); }
   .ladder li { display: grid; grid-template-columns: 72px 1fr; gap: 0 16px; text-align: left; padding: 0; align-items: center; }
-  .ladder .mascot, .ladder li:nth-child(n) .mascot { height: 64px; margin: 0 auto; grid-row: span 4; object-position: center; }
+  .ladder .mascot, .ladder li:nth-child(n) .mascot { margin: 0 auto; grid-row: span 4; object-position: center; }
+  .ladder li:nth-child(1) .mascot { height: 36px; }
+  .ladder li:nth-child(2) .mascot { height: 44px; }
+  .ladder li:nth-child(3) .mascot { height: 59px; }
+  .ladder li:nth-child(4) .mascot { height: 69px; }
+  .ladder li:nth-child(5) .mascot { height: 72px; }
   .brand img { height: 60px; }
   .cols, .cols-3, .quotes, .staff { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr 1fr; }
