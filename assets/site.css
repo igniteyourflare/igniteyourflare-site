@@ -241,17 +241,46 @@ tbody th { font-weight: 680; color: var(--plum); white-space: nowrap; }
   .brand span { display: none; }
 }
 
-/* Tuition: price card + included icons */
-.price-card { background: linear-gradient(135deg, var(--plum), var(--sun-3)); border-top: 6px solid var(--sun-1); color: #fff; border-radius: var(--r); padding: 26px; }
-.price-card p { color: #fff; }
-.price-card .muted { color: rgba(255,255,255,.88); }
-.price-label { font-weight: 650; text-transform: uppercase; letter-spacing: .06em; font-size: .82rem; margin: 0 0 6px; }
-.price-range { font-family: var(--display); font-weight: 760; font-size: clamp(2.2rem, 5vw, 3rem); line-height: 1; margin: 0 0 12px; }
-.price-range span { font-size: 1.1rem; font-weight: 600; margin-left: 4px; }
+/* Tuition page */
+.section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.price-row { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+.price-card { background: linear-gradient(140deg, var(--plum) 0%, #6a12a8 60%, var(--sun-3) 100%); color: #fff; border-radius: 22px; padding: 32px; box-shadow: 0 24px 50px -28px rgba(58,20,70,.6); position: relative; overflow: hidden; }
+.price-card::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 6px; background: linear-gradient(90deg, var(--sun-1), var(--sun-2), var(--sun-3), var(--sun-4)); }
+.price-card p { color: #fff; margin: 0; }
+.price-label { font-weight: 650; text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; opacity: .85; margin-bottom: 8px !important; }
+.price-range { font-family: var(--display); font-weight: 760; font-size: clamp(2.4rem, 5.5vw, 3.4rem); line-height: 1; margin-bottom: 12px !important; }
+.price-range span { font-size: 1.1rem; font-weight: 600; margin-left: 6px; opacity: .9; }
+.price-note { font-size: .97rem; opacity: .92; }
+.price-perk { display: flex; gap: 12px; align-items: flex-start; margin: 22px 0; padding: 16px; border-radius: 14px; background: rgba(255,255,255,.12); }
+.price-perk p { font-size: .97rem; }
+.perk-ic { flex: none; display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--sun-1); color: var(--plum); }
+.price-fine { font-size: .85rem; opacity: .8; }
 .included { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.included li { display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 16px 18px; font-weight: 600; color: var(--plum); margin: 0; }
+.included li { display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; font-weight: 600; color: var(--plum); margin: 0; min-height: 82px; }
 .inc-ic { flex: none; display: grid; place-items: center; width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, var(--sun-1), var(--sun-3)); color: #fff; }
-.not-inc { margin: 22px 0 0; color: var(--muted); font-size: .97rem; }
+.not-inc { margin: 24px auto 0; color: var(--muted); font-size: .95rem; text-align: center; max-width: 70ch; }
+.plans { list-style: none; padding: 0; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 880px; }
+.plans li { margin: 0; text-align: center; border: 1px solid var(--line); border-radius: 18px; padding: 26px 18px; background: #fff; display: flex; flex-direction: column; align-items: center; }
+.plan-num { font-family: var(--display); font-weight: 760; font-size: 3rem; line-height: 1; background: linear-gradient(135deg, var(--sun-2), var(--sun-3)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.plan-unit { font-size: .85rem; color: var(--muted); margin: 4px 0 12px; }
+.plans strong { color: var(--plum); font-size: 1.05rem; }
+.plan-sub { font-size: .88rem; color: var(--muted); }
+.plans-note { text-align: center; color: var(--muted); font-size: .95rem; margin: 24px auto 0; max-width: 64ch; }
+.enroll { list-style: none; counter-reset: e; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; position: relative; }
+.enroll::before { content: ""; position: absolute; top: 22px; left: 10%; right: 10%; height: 3px; background: linear-gradient(90deg, var(--sun-1), var(--sun-2), var(--sun-3), var(--sun-4)); border-radius: 3px; }
+.enroll li { counter-increment: e; margin: 0; text-align: center; position: relative; }
+.enroll li::before { content: counter(e); display: grid; place-items: center; width: 46px; height: 46px; margin: 0 auto 14px; border-radius: 50%; background: var(--plum); color: #fff; font: 760 1.15rem/1 var(--display); box-shadow: 0 0 0 6px var(--wash); }
+.enroll h3 { font-size: 1.02rem; margin-bottom: 6px; }
+.enroll p { margin: 0; color: var(--muted); font-size: .93rem; }
 .steps-5 { grid-template-columns: repeat(5, 1fr); }
-@media (max-width: 900px) { .included { grid-template-columns: 1fr 1fr; } .steps-5 { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 560px) { .included, .steps-5 { grid-template-columns: 1fr; } }
+@media (max-width: 900px) {
+  .price-row { grid-template-columns: 1fr; gap: 28px; }
+  .included { grid-template-columns: 1fr 1fr; }
+  .steps-5 { grid-template-columns: 1fr 1fr; }
+  .enroll { grid-template-columns: 1fr; gap: 0; max-width: 440px; margin: 0 auto; }
+  .enroll::before { top: 20px; bottom: 20px; left: 22px; right: auto; width: 3px; height: auto; background: linear-gradient(180deg, var(--sun-1), var(--sun-2), var(--sun-3), var(--sun-4)); }
+  .enroll li { display: grid; grid-template-columns: 46px 1fr; column-gap: 16px; text-align: left; padding-bottom: 22px; }
+  .enroll li::before { grid-row: span 2; margin: 0; }
+  .enroll h3 { align-self: end; margin: 0; }
+}
+@media (max-width: 560px) { .steps-5 { grid-template-columns: 1fr; } .included { gap: 10px; } .included li:last-child:nth-child(odd) { grid-column: span 2; } .included li { flex-direction: column; text-align: center; gap: 8px; padding: 14px 10px; font-size: .9rem; } .inc-ic { width: 44px; height: 44px; } .plans { gap: 8px; } .plans li { padding: 16px 6px; } .plan-num { font-size: 2.2rem; } .plan-unit { font-size: .75rem; } .plans strong { font-size: .92rem; } .price-card { padding: 26px 22px; } }
