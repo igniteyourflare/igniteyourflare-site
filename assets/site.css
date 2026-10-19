@@ -240,3 +240,18 @@ tbody th { font-weight: 680; color: var(--plum); white-space: nowrap; }
   .avatar { width: 64px; height: 64px; font-size: 1.25rem; }
   .brand span { display: none; }
 }
+
+/* Tuition: price card + included icons */
+.price-card { background: linear-gradient(135deg, var(--plum), var(--sun-3)); border-top: 6px solid var(--sun-1); color: #fff; border-radius: var(--r); padding: 26px; }
+.price-card p { color: #fff; }
+.price-card .muted { color: rgba(255,255,255,.88); }
+.price-label { font-weight: 650; text-transform: uppercase; letter-spacing: .06em; font-size: .82rem; margin: 0 0 6px; }
+.price-range { font-family: var(--display); font-weight: 760; font-size: clamp(2.2rem, 5vw, 3rem); line-height: 1; margin: 0 0 12px; }
+.price-range span { font-size: 1.1rem; font-weight: 600; margin-left: 4px; }
+.included { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.included li { display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 16px 18px; font-weight: 600; color: var(--plum); margin: 0; }
+.inc-ic { flex: none; display: grid; place-items: center; width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, var(--sun-1), var(--sun-3)); color: #fff; }
+.not-inc { margin: 22px 0 0; color: var(--muted); font-size: .97rem; }
+.steps-5 { grid-template-columns: repeat(5, 1fr); }
+@media (max-width: 900px) { .included { grid-template-columns: 1fr 1fr; } .steps-5 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .included, .steps-5 { grid-template-columns: 1fr; } }
