@@ -284,3 +284,36 @@ tbody th { font-weight: 680; color: var(--plum); white-space: nowrap; }
   .enroll h3 { align-self: end; margin: 0; }
 }
 @media (max-width: 560px) { .steps-5 { grid-template-columns: 1fr; } .included { gap: 10px; } .included li:last-child:nth-child(odd) { grid-column: span 2; } .included li { flex-direction: column; text-align: center; gap: 8px; padding: 14px 10px; font-size: .9rem; } .inc-ic { width: 44px; height: 44px; } .plans { gap: 8px; } .plans li { padding: 16px 6px; } .plan-num { font-size: 2.2rem; } .plan-unit { font-size: .75rem; } .plans strong { font-size: .92rem; } .price-card { padding: 26px 22px; } }
+
+/* Programs: team cards with mascot progression (Blaze/Wildfire = 100%) */
+.team-list { display: grid; gap: 16px; }
+.team-card { display: grid; grid-template-columns: 170px 1fr; gap: 28px; align-items: center; background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 22px 28px 22px 18px; }
+.team-art { height: 150px; display: flex; align-items: flex-end; justify-content: center; }
+.team-card .team-mascot { width: auto; margin: 0; }
+.team-wildfire .team-mascot, .team-blaze .team-mascot { height: 150px; }
+.team-spark .team-mascot { height: 123px; }
+.team-ember .team-mascot { height: 91px; }
+.team-glow .team-mascot { height: 76px; }
+.team-body h3 { font-size: 1.45rem; margin: 0 0 4px; }
+.team-kind { font-weight: 650; color: var(--sun-3); font-size: .92rem; margin: 0 0 10px; }
+.team-body p:last-child { margin: 0; color: var(--ink); }
+.team-wildfire { border: 2px solid transparent; background: linear-gradient(#fff,#fff) padding-box, linear-gradient(120deg, var(--sun-1), var(--sun-2), var(--sun-3), var(--sun-4)) border-box; }
+.cta-card { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 20px 32px; align-items: center; justify-content: space-between; padding: 28px 32px; border-radius: 20px; background: var(--wash); border: 2px solid var(--sun-1); }
+.cta-card h3 { margin: 0 0 6px; font-size: 1.35rem; }
+.cta-card p { margin: 0; color: var(--muted); }
+.cta-glow { background: linear-gradient(120deg, var(--sun-1), var(--sun-2) 45%, var(--sun-3)); color: #fff; }
+.cta-glow h2 { color: #fff; }
+.cta-glow .muted { color: rgba(255,255,255,.92); }
+.cta-glow .btn-primary { background: var(--plum) !important; color: #fff !important; border-color: var(--plum) !important; }
+.cta-glow .btn-ghost { color: var(--plum) !important; background: #fff; border-color: #fff !important; }
+@media (max-width: 700px) {
+  .team-card { grid-template-columns: 1fr; gap: 12px; padding: 20px; }
+  .team-art { height: 104px; justify-content: flex-start; }
+  .team-wildfire .team-mascot, .team-blaze .team-mascot { height: 104px; }
+  .team-spark .team-mascot { height: 85px; }
+  .team-ember .team-mascot { height: 63px; }
+  .team-glow .team-mascot { height: 53px; }
+  .team-body h3 { font-size: 1.2rem; }
+  .cta-card { padding: 22px; }
+  .cta-card .actions { width: 100%; }
+}
