@@ -468,3 +468,4 @@ a.fcard:hover, a.lcard:hover { transform: translateY(-3px); box-shadow: 0 18px 3
 .staff .avatar { background: linear-gradient(135deg, var(--sun-1), var(--sun-3)); color: #fff; }
 @media (max-width: 560px) { .phoenix-row { gap: 4px; } .phoenix-row li:nth-child(1) img { height: 34px; } .phoenix-row li:nth-child(2) img { height: 41px; } .phoenix-row li:nth-child(3) img { height: 55px; } .phoenix-row li:nth-child(4) img { height: 64px; } .phoenix-row li:nth-child(5) img { height: 67px; } .phoenix-row span { font-size: .72rem; padding: 2px 7px; } }
 .staff { gap: 16px; }
+@media (max-width: 560px) { .place-table th, .place-table td { padding: 10px 8px; font-size: .88rem; } .place-table .lvl { font-size: .74rem; padding: 3px 7px; white-space: normal; } }
