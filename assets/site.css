@@ -424,3 +424,31 @@ a.fcard:hover, a.lcard:hover { transform: translateY(-3px); box-shadow: 0 18px 3
 .ladder li:nth-child(3) .mascot-name { color: var(--sun-3); }
 .ladder li:nth-child(4) .mascot-name { color: #6f4ee0; }
 .ladder li:nth-child(5) .mascot-name { color: var(--sun-4); }
+.team-scorch { --team: #6f4ee0; }
+.team-card.team-scorch { border: 2px solid var(--team); }
+.team-card.team-scorch .team-kind { color: var(--team); }
+.team-scorch .team-mascot { height: 144px; }
+@media (max-width: 700px) { .team-scorch .team-mascot { height: 100px; } }
+.lvl { display: inline-block; padding: 4px 10px; border-radius: 999px; font-weight: 650; font-size: .88rem; border: 2px solid; background: #fff; white-space: nowrap; }
+.lvl-glow { border-color: var(--sun-1); color: #9a5f00; }
+.lvl-ember { border-color: var(--sun-2); color: #b8323d; }
+.lvl-spark { border-color: var(--sun-3); color: #7a0fc0; }
+.lvl-scorch { border-color: #6f4ee0; color: #5133c0; }
+.lvl-blaze { border-color: var(--sun-4); color: #2a62a8; }
+.place-table td { line-height: 2.1; }
+.lvl-legend { list-style: none; padding: 0; margin: 0 0 18px; display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: flex-end; }
+.lvl-legend li { margin: 0; display: flex; align-items: flex-end; gap: 6px; }
+.lvl-legend img { height: 40px; width: auto; }
+.vs-card { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
+.vs-card h3 { margin: 0 0 12px; }
+.vs-row { display: grid; grid-template-columns: 96px 1fr 1fr; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); font-size: .94rem; }
+.vs-row strong { color: var(--plum); }
+.vs-head { border-top: 0; font-weight: 700; font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); padding-top: 0; }
+.vs-head span:last-child, .vs-row span:last-child { color: var(--sun-3); font-weight: 600; }
+.vs-head span:last-child { color: var(--sun-3); }
+.date-list { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 10px; }
+.date-list li { margin: 0; display: flex; gap: 12px; align-items: center; background: rgba(255,255,255,.12); border-radius: 14px; padding: 12px 14px; }
+.date-list strong { display: block; color: #fff; }
+.date-list span:not(.perk-ic) { color: rgba(255,255,255,.88); font-size: .95rem; }
+.feature-card .eyebrow { margin-bottom: 6px; }
+@media (max-width: 560px) { .vs-row { grid-template-columns: 1fr 1fr; } .vs-row > :first-child { grid-column: span 2; } .vs-head > :first-child { display: none; } }
