@@ -471,3 +471,9 @@ a.fcard:hover, a.lcard:hover { transform: translateY(-3px); box-shadow: 0 18px 3
 @media (max-width: 560px) { .place-table th, .place-table td { padding: 10px 8px; font-size: .88rem; } .place-table .lvl { font-size: .74rem; padding: 3px 7px; white-space: normal; } }
 .feat-ic.style-pic { width: 72px; height: 72px; padding: 3px; overflow: hidden; }
 .feat-ic.style-pic img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
+.sf-ic.style-pic { width: 64px; height: 64px; padding: 3px; overflow: hidden; }
+.sf-ic.style-pic img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
+.pic-pair { display: flex; gap: 14px; margin-bottom: 10px; }
+.pic-cap { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.pic-cap .feat-ic { margin: 0; }
+.pic-cap small { font-size: .75rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--sun-3); }
