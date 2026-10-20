@@ -477,3 +477,8 @@ a.fcard:hover, a.lcard:hover { transform: translateY(-3px); box-shadow: 0 18px 3
 .pic-cap { display: flex; flex-direction: column; align-items: center; gap: 4px; }
 .pic-cap .feat-ic { margin: 0; }
 .pic-cap small { font-size: .75rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--sun-3); }
+.phoenix-row.ages li { gap: 6px; }
+.phoenix-row.ages em { font-style: normal; font-size: .85rem; color: var(--muted); font-weight: 600; }
+.map-card { border-radius: 22px; overflow: hidden; border: 2px solid transparent; background: linear-gradient(#fff,#fff) padding-box, linear-gradient(120deg, var(--sun-1), var(--sun-2), var(--sun-3), var(--sun-4)) border-box; min-height: 380px; }
+.map-card iframe { display: block; width: 100%; height: 100%; min-height: 380px; border: 0; }
+@media (max-width: 560px) { .phoenix-row.ages em { font-size: .68rem; } .map-card, .map-card iframe { min-height: 300px; } }
