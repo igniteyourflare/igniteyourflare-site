@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon-48.png" type="image/png">
 <link rel="apple-touch-icon" href="/favicon.png">
 <link rel="preload" href="/assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=dbfd6209">
+<link rel="stylesheet" href="/assets/site.css?v=1c66ee8c">
 <script src="/assets/site.js" defer></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.igniteyourflare.com/"}, {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.igniteyourflare.com/contact-us"}]}</script>
 </head>
@@ -34,7 +34,7 @@
 <div id="try-a-class">
 <h2>Tell us about your dancer</h2>
 <!-- INQUIRY FORM: Airtable "New Leads" form (Client Masterlist base). It redirects to /thank-you, which counts the Google Ads conversion. -->
-<iframe class="form-frame" src="https://airtable.com/embed/appz36gOy5x4uTANq/pagZAZXZlMRMAmy4P/form" title="Tell us about your dancer" loading="lazy" style="min-height:1500px;border:1px solid var(--line)"></iframe>
+<iframe id="lead-form" class="form-frame" src="https://airtable.com/embed/appz36gOy5x4uTANq/pagZAZXZlMRMAmy4P/form" title="Tell us about your dancer" loading="lazy" style="min-height:1500px;border:1px solid var(--line)"></iframe><script>(function(){var m={audition:"Team audition",classes:"Semester classes"};var v=m[new URLSearchParams(location.search).get("interest")];if(!v)return;var f=document.getElementById("lead-form");f.src+="?prefill_Interested+In="+encodeURIComponent(v);})();</script>
 <p class="small muted" style="margin-top:14px">Form not loading? <a href="https://airtable.com/appz36gOy5x4uTANq/pagZAZXZlMRMAmy4P/form">Open it in a new tab</a>, <a href="sms:+15302554180">text (530) 255-4180</a> or <a href="mailto:office@igniteyourflare.com">email us</a>.</p>
 </div>
 </div>

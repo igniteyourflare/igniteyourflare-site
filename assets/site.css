@@ -360,3 +360,13 @@ tbody th { font-weight: 680; color: var(--plum); white-space: nowrap; }
 .commit-list p { margin: 2px 0 0; color: var(--muted); font-size: .92rem; }
 @media (max-width: 900px) { .prog-grid { grid-template-columns: 1fr 1fr; } .commit-list { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .prog-grid, .commit-list { grid-template-columns: 1fr; } .commit-list li { flex-direction: row; } .commit { padding: 22px; } }
+
+/* Team colors follow the ombre: Glow orange, Ember pink, Spark purple, Blaze blue, Wildfire full ombre */
+.pc-blaze, .team-blaze { --team: var(--sun-4); }
+.pc-spark, .team-spark { --team: var(--sun-3); }
+.pc-ember, .team-ember { --team: var(--sun-2); }
+.pc-glow, .team-glow { --team: var(--sun-1); }
+.pc-blaze, .pc-spark, .pc-ember, .pc-glow, .team-card.team-blaze, .team-card.team-spark, .team-card.team-ember, .team-card.team-glow { border: 2px solid var(--team); }
+.team-card.team-blaze .team-kind, .team-card.team-spark .team-kind, .team-card.team-ember .team-kind, .team-card.team-glow .team-kind { color: var(--team); }
+.team-card.team-glow .team-kind { color: #c97c00; }
+.team-card.team-wildfire { border-width: 2px; }
