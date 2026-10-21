@@ -532,3 +532,6 @@ a.fcard:hover, a.lcard:hover { transform: translateY(-3px); box-shadow: 0 18px 3
 .spark-logo img { max-width: 100%; max-height: 180px; width: auto; }
 .spark-logo .sp-name { font-size: 2rem; text-align: center; }
 @media (max-width: 900px) { .spark-wrap { grid-template-columns: 1fr; gap: 24px; } .spark-logo { min-height: 160px; } }
+.feat-ic.style-pic { width: 104px; height: 104px; padding: 4px; }
+.sf-ic.style-pic { width: 84px; height: 84px; padding: 3px; }
+.pic-pair .feat-ic.style-pic { width: 92px; height: 92px; }
