@@ -535,3 +535,7 @@ a.fcard:hover, a.lcard:hover { transform: translateY(-3px); box-shadow: 0 18px 3
 .feat-ic.style-pic { width: 104px; height: 104px; padding: 4px; }
 .sf-ic.style-pic { width: 84px; height: 84px; padding: 3px; }
 .pic-pair .feat-ic.style-pic { width: 92px; height: 92px; }
+.sp-logo img + .sp-name { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); display: block; }
+.sp-t3 .sp-logo { min-height: 110px; } .sp-t3 .sp-logo img { max-height: 110px; max-width: 80%; }
+.sp-t3 .sp-logo { flex-direction: column; gap: 10px; }
+.sp-t3 .sp-logo img + .sp-name { position: static; width: auto; height: auto; overflow: visible; clip: auto; font-size: .92rem; }
