@@ -11,6 +11,9 @@ sponsors/<name>.png     Sponsor logos (PNG with transparent background, wide is 
 studios/<name>.jpg      Facilities page photos, landscape 4:3 (at least 1200x900): office-store, studio-a, studio-b, backroom.
 recitals/recital-1..8.jpg  Recital page carousel, landscape 3:2 (at least 1800x1200), past shows on stage.
 recitals/thistle-quill.jpg  Recital page Thistle & Quill section, landscape 4:3.
+uniform/<name>.jpg     Uniform product photos, square: leotard, shorts, tights, ballet-shoes, tap-shoes, hip-hop-shoes, jazz-shoes, lyrical-turners, acro-dance-tech-gear, hair-bun-kit, apolla (+ apolla-logo.png).
+uniform/look-<name>.jpg  Uniform outfit photos, portrait 4:5: look-base, look-hip-hop, look-acro, look-dance-tech.
+newsletters/YYYY-MM.jpg  One image per newsletter issue; add each to the list at the bottom of about/newsletters.html.
 og.jpg                 Preview image when the site is shared
 
 To add or change photos, ask Claude (see the website SOP in Slack #landing-pages).
