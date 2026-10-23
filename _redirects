@@ -3,10 +3,4 @@
 /index.html               /                                 301
 /become-a-sponsor         /#sponsors                        301
 
-# Pages still hosted on the original Google Sites address (302 = temporary).
-# Keep the Google Site published at sites.google.com/view/igniteyourflare when you
-# move the domain, or these links stop working. Replace each line once the page
-# is rebuilt here.
-/handbook                    https://sites.google.com/view/igniteyourflare/handbook                    302
 
-/about/recital-volunteer-info https://sites.google.com/view/igniteyourflare/about/recital-volunteer-info 302

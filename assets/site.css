@@ -630,3 +630,65 @@ a.pcard:hover { transform: translateY(-3px); box-shadow: 0 18px 36px -24px rgba(
 .news-go { margin-left: auto; font-weight: 700; color: var(--sun-3); white-space: nowrap; }
 @media (max-width: 900px) { .pgrid, .nl-grid { grid-template-columns: 1fr 1fr; } .look-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .pgrid { grid-template-columns: 1fr 1fr; gap: 10px; } .pcard-body { padding: 12px; } .pcard p { font-size: .85rem; } .news-link { border-radius: 20px; flex-wrap: wrap; } .news-go { margin-left: 60px; } }
+/* Handbook */
+.hb-wrap { padding-top: 40px; }
+.hb-grid { display: grid; grid-template-columns: 260px 1fr; gap: 48px; align-items: start; }
+.hb-toc { position: sticky; top: 104px; max-height: calc(100vh - 124px); overflow: auto; background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 18px; }
+.hb-toc-title { margin: 0 0 10px; font-weight: 700; color: var(--plum); }
+.hb-toc ol { margin: 0; padding-left: 20px; font-size: .9rem; }
+.hb-toc li { margin: 0 0 6px; }
+.hb-toc a { color: var(--ink); text-decoration: none; }
+.hb-toc a:hover { color: var(--sun-3); text-decoration: underline; }
+.hb-body { max-width: 760px; }
+.hb-intro { border: 2px solid transparent; background: linear-gradient(#fff,#fff) padding-box, linear-gradient(120deg, var(--sun-1), var(--sun-2), var(--sun-3), var(--sun-4)) border-box; border-radius: 20px; padding: 24px 26px; margin-bottom: 28px; }
+.hb-pledge { font-weight: 650; color: var(--plum); }
+.hb-intro p:last-child { margin-bottom: 0; color: var(--muted); font-size: .95rem; }
+.hb-sec { padding: 26px 0; border-top: 1px solid var(--line); scroll-margin-top: 100px; }
+.hb-sec h2 { font-size: 1.55rem; margin-bottom: 14px; }
+.hb-sec h3 { font-size: 1.1rem; margin: 20px 0 10px; color: var(--sun-3); scroll-margin-top: 100px; }
+.hb-sec p { margin: 0 0 12px; }
+.hb-caps { font-weight: 700; color: var(--plum); }
+.hb-list { margin: 0 0 14px; padding-left: 22px; }
+.hb-list li { margin: 0 0 6px; }
+.hb-dates { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0 14px; }
+.hb-date { background: #fff; border: 2px solid var(--sun-4); border-radius: 14px; padding: 10px 16px; }
+.hb-date span { display: block; font-size: .75rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+.hb-date strong { font-family: var(--display); color: var(--plum); font-size: 1.15rem; }
+.hb-incl { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 10px 0 16px; }
+.hb-incl > div { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 18px 20px; }
+.hb-incl h3 { margin-top: 0 !important; }
+.hb-rates { max-width: 360px; margin-bottom: 14px; }
+.hb-end { margin-top: 30px; }
+@media (max-width: 900px) { .hb-grid { grid-template-columns: 1fr; gap: 20px; } .hb-toc { position: static; max-height: none; } .hb-incl { grid-template-columns: 1fr; } }
+@media print {
+  .site-head, .site-foot, footer, .hb-toc, .hb-actions, .crumbs, .hb-end, .skip { display: none !important; }
+  .hb-grid { display: block; } .page-head { background: none; border: 0; padding: 0 0 12px; }
+  body { font-size: 11pt; background: #fff; } .hb-sec { break-inside: auto; padding: 14px 0; } .hb-sec h2 { break-after: avoid; }
+  a { color: inherit; text-decoration: none; }
+}
+/* Volunteer page */
+.vol-tag { font-family: var(--display); font-weight: 760; font-size: clamp(1.3rem, 3vw, 1.8rem); color: var(--sun-3); margin: 0; }
+.vol-big { font-family: var(--display); font-weight: 760; font-size: 1.3rem; color: var(--plum); }
+.vol-pic { aspect-ratio: 4 / 3; border-radius: 22px; overflow: hidden; background: linear-gradient(135deg, var(--sun-1), var(--sun-2) 40%, var(--sun-3) 75%, var(--sun-4)); }
+.vol-pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.vol-perks { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.vol-perk { background: #fff; border-radius: 22px; padding: 26px; border: 2px solid transparent; background: linear-gradient(#fff,#fff) padding-box, linear-gradient(120deg, var(--sun-1), var(--sun-2), var(--sun-3), var(--sun-4)) border-box; }
+.vol-perk .perk-ic { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--sun-1), var(--sun-3)); color: #fff; margin-bottom: 12px; }
+.vol-perk h3 { font-size: 1.25rem; margin: 0 0 10px; }
+.vol-perk p { margin: 0; color: var(--muted); }
+.vol-swap { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.vol-swap li { margin: 0; background: var(--wash); border-radius: 12px; padding: 10px 14px; font-size: .95rem; }
+.vol-steps { counter-reset: v; list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 10px; }
+.vol-steps li { counter-increment: v; margin: 0; display: flex; gap: 12px; align-items: center; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; }
+.vol-steps li::before { content: counter(v); flex: none; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--plum); color: #fff; font-weight: 760; }
+.vol-total { align-self: center; }
+.vol-total-txt { font-family: var(--display); font-weight: 760; font-size: 1.35rem; color: #fff !important; line-height: 1.3; margin: 0; }
+.vol-roles { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.vol-roles li { margin: 0; background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--sun-3); border-radius: 12px; padding: 12px 16px; }
+.vol-note { text-align: center; font-weight: 650; color: var(--plum); margin: 22px 0; }
+.ombre-card { border: 2px solid transparent; background: linear-gradient(#fff,#fff) padding-box, linear-gradient(120deg, var(--sun-1), var(--sun-2), var(--sun-3), var(--sun-4)) border-box; border-radius: 20px; }
+.vol-lead { display: flex; gap: 16px; align-items: flex-start; padding: 22px 24px; }
+.vol-lead .perk-ic { width: 46px; height: 46px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--sun-1); color: var(--plum); }
+.vol-lead h3 { margin: 0 0 4px; } .vol-lead p { margin: 0; }
+.vol-promise { text-align: center; }
+@media (max-width: 700px) { .vol-perks, .vol-roles { grid-template-columns: 1fr; } }
