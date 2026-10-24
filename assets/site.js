@@ -7,7 +7,7 @@
    Leave a value blank to switch that tag off. */
 
 var IYF_GA4_ID = "G-Y3RP7TK56Z";        // e.g. "G-ABC123XYZ"
-var IYF_GOOGLE_ADS_ID = ""; // e.g. "AW-123456789"
+var IYF_GOOGLE_ADS_ID = "AW-972924998"; // e.g. "AW-123456789"
 
 (function () {
   var first = IYF_GA4_ID || IYF_GOOGLE_ADS_ID;
