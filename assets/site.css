@@ -764,3 +764,24 @@ a.pcard:hover { transform: translateY(-3px); box-shadow: 0 18px 36px -24px rgba(
 .dz-key::before { background: var(--sun-1) !important; color: var(--plum) !important; }
 .dz-ded { margin: 6px 0 0; padding: 10px 12px; border-radius: 12px; background: #fff6e6; border: 2px dashed var(--sun-1); text-align: center; font-size: .9rem; color: var(--plum); }
 .dz-ded strong { font-weight: 800; }
+/* Cookie banner */
+.cookie-bar { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 60; max-width: 760px; margin: 0 auto; display: flex; gap: 18px; align-items: center; background: #fff; border: 2px solid transparent; background: linear-gradient(#fff,#fff) padding-box, linear-gradient(120deg, var(--sun-1), var(--sun-2), var(--sun-3), var(--sun-4)) border-box; border-radius: 18px; padding: 16px 20px; box-shadow: 0 24px 50px -20px rgba(58,20,70,.45); }
+.cookie-bar strong { color: var(--plum); }
+.cookie-bar p { margin: 2px 0 0; font-size: .9rem; color: var(--muted); }
+.cookie-bar .ck-gpc { font-weight: 600; color: var(--plum); }
+.ck-btns { display: flex; gap: 8px; flex: none; }
+@media (max-width: 560px) { .cookie-bar { flex-direction: column; align-items: stretch; } .ck-btns { justify-content: stretch; } .ck-btns .btn { flex: 1; text-align: center; } }
+@media print { .cookie-bar { display: none !important; } }
+/* Accessible (WCAG AA) text versions of team colors */
+.team-glow, .bird-glow, .c-glow { --team-text: #8a5600; }
+.team-ember, .bird-ember, .c-ember { --team-text: #b8323d; }
+.team-spark, .bird-spark, .c-spark { --team-text: #7a0fc0; }
+.team-scorch, .bird-scorch, .c-scorch { --team-text: #5133c0; }
+.team-blaze, .bird-blaze, .c-blaze { --team-text: #2a62a8; }
+.team-wildfire, .bird-wildfire { --team-text: #7a0fc0; }
+.team-card .team-kind, .team-card.team-glow .team-kind, .bird .bird-stage, .bird-glow .bird-stage, .bird-wildfire .bird-stage { color: var(--team-text, var(--sun-3)); }
+.dz-team { background: var(--team-text, var(--sun-3)); color: #fff; }
+.dz.team-glow .dz-team { color: #fff; }
+.ladder li:nth-child(1) .mascot-name { color: #8a5600; } .ladder li:nth-child(2) .mascot-name { color: #b8323d; } .ladder li:nth-child(5) .mascot-name { color: #2a62a8; }
+.team-card.team-blaze .team-kind, .team-card.team-spark .team-kind, .team-card.team-ember .team-kind, .team-card.team-glow .team-kind, .team-card.team-scorch .team-kind, .team-card.team-wildfire .team-kind { color: var(--team-text); }
+.phoenix-row li span { color: var(--team-text, var(--plum)); }

@@ -9,11 +9,25 @@
 var IYF_GA4_ID = "G-Y3RP7TK56Z";        // e.g. "G-ABC123XYZ"
 var IYF_GOOGLE_ADS_ID = "AW-972924998"; // e.g. "AW-123456789"
 
+/* Cookie consent (Google Consent Mode v2).
+   US opt-out model: tags run unless the visitor declines or their browser sends
+   Global Privacy Control (GPC), which we treat as an opt-out of ad cookies. */
+var IYF_CONSENT_KEY = "iyf_consent"; // "all" | "essential"
+
+function iyfGetConsent() { try { return localStorage.getItem(IYF_CONSENT_KEY); } catch (e) { return null; } }
+function iyfConsentState(choice) {
+  var gpc = !!navigator.globalPrivacyControl;
+  var ads = choice === "essential" || gpc ? "denied" : "granted";
+  var analytics = choice === "essential" ? "denied" : "granted";
+  return { ad_storage: ads, ad_user_data: ads, ad_personalization: ads, analytics_storage: analytics };
+}
+
 (function () {
   var first = IYF_GA4_ID || IYF_GOOGLE_ADS_ID;
   if (!first) return;
   window.dataLayer = window.dataLayer || [];
   window.gtag = function () { dataLayer.push(arguments); };
+  gtag("consent", "default", iyfConsentState(iyfGetConsent()));
   gtag("js", new Date());
   if (IYF_GA4_ID) gtag("config", IYF_GA4_ID);
   if (IYF_GOOGLE_ADS_ID) gtag("config", IYF_GOOGLE_ADS_ID);
@@ -30,4 +44,31 @@ var IYF_GOOGLE_ADS_ID = "AW-972924998"; // e.g. "AW-123456789"
     var kind = h.indexOf("tel:") === 0 ? "call" : h.indexOf("sms:") === 0 ? "text" : h.indexOf("mailto:") === 0 ? "email" : null;
     if (kind) gtag("event", "contact_" + kind, { link_url: h });
   });
+})();
+
+/* Cookie banner + "Cookie settings" link (any element with data-cookie-settings). */
+(function () {
+  function save(choice) {
+    try { localStorage.setItem(IYF_CONSENT_KEY, choice); } catch (e) {}
+    if (window.gtag) gtag("consent", "update", iyfConsentState(choice));
+    var b = document.getElementById("iyf-cookie"); if (b) b.remove();
+  }
+  function show() {
+    if (document.getElementById("iyf-cookie")) return;
+    var gpc = navigator.globalPrivacyControl ? '<p class="ck-gpc">Your browser sent a Global Privacy Control signal, so ad cookies are already off.</p>' : "";
+    var d = document.createElement("div");
+    d.id = "iyf-cookie"; d.className = "cookie-bar"; d.setAttribute("role", "dialog"); d.setAttribute("aria-label", "Cookie choices");
+    d.innerHTML = '<div class="ck-text"><strong>Cookies on this site</strong><p>We use cookies to see how families use our site and to measure our ads. You can accept them or keep only what the site needs to work. <a href="/about/privacy-policy#cookies">Privacy Policy</a></p>' + gpc + '</div>' +
+      '<div class="ck-btns"><button type="button" class="btn btn-ghost btn-small" data-c="essential">Decline</button><button type="button" class="btn btn-primary btn-small" data-c="all">Accept</button></div>';
+    d.addEventListener("click", function (e) { var c = e.target.getAttribute && e.target.getAttribute("data-c"); if (c) save(c); });
+    document.body.appendChild(d);
+  }
+  function init() {
+    if (!iyfGetConsent()) show();
+    document.addEventListener("click", function (e) {
+      var t = e.target.closest && e.target.closest("[data-cookie-settings]");
+      if (t) { e.preventDefault(); show(); }
+    });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
 })();
