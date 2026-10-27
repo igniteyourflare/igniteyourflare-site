@@ -785,3 +785,10 @@ a.pcard:hover { transform: translateY(-3px); box-shadow: 0 18px 36px -24px rgba(
 .ladder li:nth-child(1) .mascot-name { color: #8a5600; } .ladder li:nth-child(2) .mascot-name { color: #b8323d; } .ladder li:nth-child(5) .mascot-name { color: #2a62a8; }
 .team-card.team-blaze .team-kind, .team-card.team-spark .team-kind, .team-card.team-ember .team-kind, .team-card.team-glow .team-kind, .team-card.team-scorch .team-kind, .team-card.team-wildfire .team-kind { color: var(--team-text); }
 .phoenix-row li span { color: var(--team-text, var(--plum)); }
+.legal-date { color: var(--muted); }
+.legal-toc { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 16px 20px; margin: 18px 0 8px; }
+.legal-toc p { margin: 0 0 6px; font-weight: 700; color: var(--plum); }
+.legal-toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 28px; font-size: .93rem; }
+.legal-toc li { margin: 0 0 4px; break-inside: avoid; }
+.legal h2 { scroll-margin-top: 100px; }
+@media (max-width: 560px) { .legal-toc ol { columns: 1; } }
