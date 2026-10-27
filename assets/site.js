@@ -8,6 +8,7 @@
 
 var IYF_GA4_ID = "G-Y3RP7TK56Z";        // e.g. "G-ABC123XYZ"
 var IYF_GOOGLE_ADS_ID = "AW-972924998"; // e.g. "AW-123456789"
+var IYF_TAG_GATEWAY_PATH = "/nnbh"; // Google tag gateway measurement path in Cloudflare (blank = load from Google)
 
 /* Cookie consent (Google Consent Mode v2).
    US opt-out model: tags run unless the visitor declines or their browser sends
@@ -23,7 +24,7 @@ function iyfConsentState(choice) {
 }
 
 (function () {
-  var first = IYF_GA4_ID || IYF_GOOGLE_ADS_ID;
+  var first = IYF_GOOGLE_ADS_ID || IYF_GA4_ID; // gateway is set up for the Ads tag
   if (!first) return;
   window.dataLayer = window.dataLayer || [];
   window.gtag = function () { dataLayer.push(arguments); };
@@ -31,9 +32,14 @@ function iyfConsentState(choice) {
   gtag("js", new Date());
   if (IYF_GA4_ID) gtag("config", IYF_GA4_ID);
   if (IYF_GOOGLE_ADS_ID) gtag("config", IYF_GOOGLE_ADS_ID);
+  // Load through Google tag gateway (first-party path on Cloudflare); fall back to Google if it fails.
   var s = document.createElement("script");
   s.async = true;
-  s.src = "https://www.googletagmanager.com/gtag/js?id=" + first;
+  s.src = IYF_TAG_GATEWAY_PATH ? IYF_TAG_GATEWAY_PATH + "/?id=" + first : "https://www.googletagmanager.com/gtag/js?id=" + first;
+  s.onerror = function () {
+    var f = document.createElement("script"); f.async = true;
+    f.src = "https://www.googletagmanager.com/gtag/js?id=" + first; document.head.appendChild(f);
+  };
   document.head.appendChild(s);
 
   // Count taps on phone, text and email links as GA4 events.
