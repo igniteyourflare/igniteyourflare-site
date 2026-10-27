@@ -9,6 +9,7 @@
 var IYF_GA4_ID = "G-Y3RP7TK56Z";        // e.g. "G-ABC123XYZ"
 var IYF_GOOGLE_ADS_ID = "AW-972924998"; // e.g. "AW-123456789"
 var IYF_TAG_GATEWAY_PATH = "/nnbh"; // Google tag gateway measurement path in Cloudflare (blank = load from Google)
+var IYF_META_PIXEL_ID = "511726753214490"; // Meta (Facebook/Instagram) Pixel — blank = off
 
 /* Cookie consent (Google Consent Mode v2).
    US opt-out model: tags run unless the visitor declines or their browser sends
@@ -52,11 +53,31 @@ function iyfConsentState(choice) {
   });
 })();
 
+/* Meta Pixel — follows the same cookie choice: off if the visitor declines or sends GPC. */
+function iyfAdsAllowed() { return iyfConsentState(iyfGetConsent()).ad_storage === "granted"; }
+(function () {
+  if (!IYF_META_PIXEL_ID) return;
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");
+  fbq("consent", iyfAdsAllowed() ? "grant" : "revoke");
+  fbq("init", IYF_META_PIXEL_ID);
+  fbq("track", "PageView");
+  if (location.pathname.replace(/\/$/, "") === "/thank-you") fbq("track", "Lead");
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a[href]");
+    if (!a) return;
+    var h = a.getAttribute("href");
+    if (/^(tel|sms|mailto):/.test(h)) fbq("track", "Contact");
+  });
+})();
+
 /* Cookie banner + "Cookie settings" link (any element with data-cookie-settings). */
 (function () {
   function save(choice) {
     try { localStorage.setItem(IYF_CONSENT_KEY, choice); } catch (e) {}
     if (window.gtag) gtag("consent", "update", iyfConsentState(choice));
+    if (window.fbq) fbq("consent", iyfConsentState(choice).ad_storage === "granted" ? "grant" : "revoke");
     var b = document.getElementById("iyf-cookie"); if (b) b.remove();
   }
   function show() {
