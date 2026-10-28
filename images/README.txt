@@ -11,7 +11,7 @@ sponsors/<name>.png     Sponsor logos (PNG with transparent background, wide is 
 studios/<name>.jpg      Facilities page photos, landscape 4:3 (at least 1200x900): studio-a-1, studio-a-2, studio-b-1, studio-b-2 (done); office-store, backroom (still needed).
 recitals/recital-1..8.jpg  Recital page carousel, landscape 3:2 (1800x1200). Filled.
 recitals/thistle-quill.jpg  Recital page Thistle & Quill section, landscape 4:3. Filled.
-uniform/<name>.jpg     Uniform product photos, square: leotard, shorts, tights, ballet-shoes, tap-shoes, hip-hop-shoes, jazz-shoes, lyrical-turners, acro-dance-tech-gear, hair-bun-kit, apolla (+ apolla-logo.png).
+uniform/<name>.jpg     Uniform product photos, square 900x900: leotard-dtf, leotard-embroidered, shorts-dtf, shorts-embroidered, tights, ballet-shoes, tap-shoes, hip-hop-shoes, jazz-shoes, lyrical-turners, yoga-mat, yoga-blocks, theraband, theraloop, tennis-ball, hair-bun-kit, apolla (filled). Still needed: apolla-logo.png, look-hip-hop.jpg, look-acro.jpg (portrait 4:5).
 uniform/look-<name>.jpg  Uniform outfit photos, portrait 4:5: look-base, look-hip-hop, look-acro, look-dance-tech.
 newsletters/YYYY-MM.jpg  One image per newsletter issue; add each to the list at the bottom of about/newsletters.html.
 og.jpg                 Preview image when the site is shared
