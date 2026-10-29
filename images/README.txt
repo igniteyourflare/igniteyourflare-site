@@ -13,7 +13,7 @@ recitals/recital-1..8.jpg  Recital page carousel, landscape 3:2 (1800x1200). Fil
 recitals/thistle-quill.jpg  Recital page Thistle & Quill section, landscape 4:3. Filled.
 uniform/<name>.jpg     Uniform product photos, square 900x900: leotard-dtf, leotard-embroidered, shorts-dtf, shorts-embroidered, tights, ballet-shoes, tap-shoes, hip-hop-shoes, jazz-shoes, lyrical-turners, yoga-mat, yoga-blocks, theraband, theraloop, tennis-ball, hair-bun-kit, apolla (filled). Still needed: look-hip-hop.jpg, look-acro.jpg (portrait 4:5).
 uniform/look-<name>.jpg  Uniform outfit photos, portrait 4:5: look-base, look-hip-hop, look-acro, look-dance-tech.
-newsletters/YYYY-MM.jpg  One image per newsletter issue; add each to the list at the bottom of about/newsletters.html.
+newsletters/YYYY-MM.jpg (cover) + YYYY-MM-en.pdf + YYYY-MM-es.pdf  Newsletters page. Filled: 2026-08, 2026-09, 2026-10.
 og.jpg                 Preview image when the site is shared
 
 To add or change photos, ask Claude (see the website SOP in Slack #landing-pages).
