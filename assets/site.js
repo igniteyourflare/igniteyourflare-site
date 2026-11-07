@@ -99,3 +99,14 @@ function iyfAdsAllowed() { return iyfConsentState(iyfGetConsent()).ad_storage ==
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
 })();
+
+/* Outbound button tracking: any link with data-track="name" sends a GA4 event and a Meta custom event. */
+(function () {
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a[data-track]");
+    if (!a) return;
+    var name = a.getAttribute("data-track");
+    if (window.gtag) gtag("event", name, { link_url: a.href, transport_type: "beacon" });
+    if (window.fbq) fbq("trackCustom", name, { link_url: a.href });
+  });
+})();
