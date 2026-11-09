@@ -110,3 +110,24 @@ function iyfAdsAllowed() { return iyfConsentState(iyfGetConsent()).ad_storage ==
     if (window.fbq) fbq("trackCustom", name, { link_url: a.href });
   });
 })();
+
+/* Ad click IDs: remember gclid/gbraid/wbraid/fbclid/utm_* from the landing URL (90 days, only with ad consent)
+   and pass them to the HighLevel form on Contact Us, so HighLevel can send the lead back to Google and Meta. */
+(function () {
+  var KEYS = ["gclid", "gbraid", "wbraid", "fbclid", "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
+  var STORE = "iyf_click", TTL = 90 * 864e5;
+  function read() { try { var o = JSON.parse(localStorage.getItem(STORE) || "null"); return o && Date.now() - o.t < TTL ? o.p : null; } catch (e) { return null; } }
+  if (iyfAdsAllowed()) {
+    var q = new URLSearchParams(location.search), p = {}, any = false;
+    KEYS.forEach(function (k) { var v = q.get(k); if (v) { p[k] = v.slice(0, 200); any = true; } });
+    if (any) { try { localStorage.setItem(STORE, JSON.stringify({ t: Date.now(), p: p })); } catch (e) {} }
+  }
+  function feedForm() {
+    var f = document.getElementById("lead-form"), p = read();
+    if (!f || !p || !iyfAdsAllowed()) return;
+    var u = new URL(f.getAttribute("src"), location.href), changed = false;
+    Object.keys(p).forEach(function (k) { if (!u.searchParams.has(k)) { u.searchParams.set(k, p[k]); changed = true; } });
+    if (changed) f.setAttribute("src", u.toString());
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", feedForm); else feedForm();
+})();
