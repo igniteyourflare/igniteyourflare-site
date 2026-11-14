@@ -1,6 +1,8 @@
 # Old Google Sites addresses -> new pages (301 = permanent, keeps Google rankings)
 /home                     /                                 301
 /index.html               /                                 301
+/Home.jsp                 /                                 301
+/page/home                /                                 301
 /become-a-sponsor         /#sponsors                        301
 
 
