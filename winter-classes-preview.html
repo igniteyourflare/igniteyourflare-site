@@ -22,34 +22,36 @@
 <script src="/assets/site.js?v=5ca8c970" defer></script>
 
 <style>
-.cert{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 18px 40px rgba(58,20,70,.18);margin:22px 0 6px;transform:rotate(-1.2deg)}
-.cert-cap{font-size:14px;color:var(--muted);margin:10px 0 0}
-.gift-sec{position:relative;overflow:hidden;color:#fff;background:radial-gradient(60% 70% at 30% 40%,rgba(255,255,255,.28),transparent 60%),linear-gradient(135deg,#f0606a 0%,#d43a9a 40%,#a011f4 75%,#3e80d0 100%);scroll-margin-top:80px}
-.gift-sec h2,.gift-sec .lead{color:#fff}.gift-sec .lead{opacity:.95}
-.gift-sec .btn-ghost{color:#fff;border-color:#fff}.gift-sec .small a{color:#fff}
-.flake{position:absolute;color:#fff;opacity:.55;font-size:22px;animation:fall linear infinite;pointer-events:none}
-@keyframes fall{from{transform:translateY(-40px) rotate(0)}to{transform:translateY(720px) rotate(240deg)}}
-.stage{position:relative;aspect-ratio:1/1;max-width:540px;margin-top:10px;width:100%;margin:0 auto;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.stage .glow{position:absolute;left:50%;bottom:6%;width:80%;height:30%;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(255,255,255,.55),transparent);filter:blur(6px)}
-.box{position:absolute;left:50%;bottom:8%;width:44%;transform:translateX(-50%);z-index:1}
-.box .body{position:relative;height:0;padding-bottom:70%;background:linear-gradient(180deg,#fff,#efe7f3);border-radius:6px 6px 12px 12px;box-shadow:0 18px 30px rgba(42,26,48,.35)}
+.hero-gift{position:relative;overflow:hidden;color:#fff;background:radial-gradient(55% 70% at 28% 45%,rgba(255,255,255,.3),transparent 60%),linear-gradient(135deg,#f0606a 0%,#d43a9a 40%,#a011f4 75%,#3e80d0 100%);padding:46px 0 54px}
+.hero-gift h1{color:#fff;margin:6px 0 0}.hero-gift .lead{color:#fff;opacity:.95;margin-top:14px}
+.hero-gift .kick{font:700 13px/1 system-ui;letter-spacing:.14em;text-transform:uppercase;opacity:.95}
+.hero-gift .btn-primary{background:#fff;color:#3a1446}.hero-gift .btn-ghost{color:#fff;border-color:#fff}
+.flake{position:absolute;color:#fff;opacity:.6;animation:fall linear infinite;pointer-events:none}
+@keyframes fall{from{transform:translateY(-40px) rotate(0)}to{transform:translateY(760px) rotate(240deg)}}
+.stage{position:relative;aspect-ratio:1/1;max-width:500px;width:100%;margin:0 auto}
+.stage .glow{position:absolute;left:50%;bottom:4%;width:90%;height:34%;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(255,255,255,.6),transparent);filter:blur(4px)}
+.box{position:absolute;left:50%;bottom:9%;width:46%;transform:translateX(-50%);z-index:3}
+.box .body{position:relative;height:0;padding-bottom:66%;background:linear-gradient(180deg,#fff,#ece3f1);border-radius:6px 6px 12px 12px;box-shadow:0 18px 30px rgba(42,26,48,.35)}
 .box .body:before{content:"";position:absolute;left:44%;width:12%;top:0;bottom:0;background:linear-gradient(180deg,#a011f4,#6d0fb8)}
-.lid{position:absolute;left:-6%;right:-6%;top:-16%;height:20%;background:linear-gradient(180deg,#fff,#f1e9f5);border-radius:6px;box-shadow:0 6px 12px rgba(42,26,48,.25);transform-origin:20% 100%;transition:transform .7s cubic-bezier(.3,1.6,.5,1);z-index:4}
+.lid{position:absolute;left:-6%;right:-6%;top:-16%;height:20%;background:linear-gradient(180deg,#fff,#efe7f3);border-radius:6px;box-shadow:0 6px 12px rgba(42,26,48,.25);transform:translate(-8%,-150%) rotate(-14deg);z-index:4}
 .lid:before{content:"";position:absolute;left:44%;width:12%;top:0;bottom:0;background:#a011f4}
-.bow{position:absolute;left:50%;top:-58%;width:56%;height:80%;transform:translateX(-50%)}
-.bow i{position:absolute;bottom:0;width:48%;height:100%;border:9px solid #a011f4;border-radius:60% 60% 10% 60%;background:rgba(160,17,244,.15)}
+.bow{position:absolute;left:50%;top:-62%;width:56%;height:84%;transform:translateX(-50%)}
+.bow i{position:absolute;bottom:0;width:48%;height:100%;border:9px solid #a011f4;border-radius:60% 60% 10% 60%;background:rgba(160,17,244,.18)}
 .bow i:first-child{left:0;transform:rotate(-18deg)}.bow i:last-child{right:0;transform:scaleX(-1) rotate(-18deg)}
-.open .lid{transform:translate(4%,-230%) rotate(-9deg)}
-.goodie{position:absolute;left:50%;bottom:22%;width:var(--w);transform:translate(-50%,0) scale(.15);opacity:0;transition:left .9s cubic-bezier(.2,1.3,.4,1),bottom .9s cubic-bezier(.2,1.3,.4,1),transform .9s cubic-bezier(.2,1.3,.4,1),opacity .4s;transition-delay:var(--d);z-index:2;text-align:center}
-.open .goodie{opacity:1;left:var(--fx);bottom:var(--fy);transform:translate(-50%,0) rotate(var(--r)) scale(1)}
-.goodie .pic{display:block;width:100%;aspect-ratio:1/1;border-radius:50%;border:5px solid #fff;object-fit:cover;box-shadow:0 10px 22px rgba(42,26,48,.35);background:#fff}
-.goodie.card .pic{aspect-ratio:auto;border-radius:12px;border:0}
-.goodie.art .pic{border:0;background:none;box-shadow:none;border-radius:0;aspect-ratio:auto;filter:drop-shadow(0 8px 14px rgba(42,26,48,.35))}
-.goodie span{display:inline-block;margin-top:6px;padding:3px 9px;font-size:11px!important;border-radius:999px;background:#fff;color:#3a1446;font:700 12px/1.3 system-ui;white-space:nowrap;box-shadow:0 4px 10px rgba(42,26,48,.2)}
-.open .goodie{animation:bob 3.2s ease-in-out infinite;animation-delay:calc(var(--d) + 1s)}
-@keyframes bob{50%{translate:0 -8px}}
-.tap{position:absolute;left:50%;bottom:-1%;transform:translateX(-50%);background:#fff;color:#3a1446;border:0;border-radius:999px;padding:8px 16px;font:700 14px system-ui;box-shadow:0 6px 16px rgba(42,26,48,.3);cursor:pointer;z-index:5}
-@media (prefers-reduced-motion:reduce){.goodie,.lid{transition:none}.open .goodie,.flake{animation:none}}
+.pop{position:absolute;z-index:2;filter:drop-shadow(0 10px 16px rgba(42,26,48,.35));animation:bob 3.4s ease-in-out infinite}
+@keyframes bob{50%{translate:0 -10px}}
+.pop.gc{left:30%;bottom:42%;width:40%;rotate:-8deg;border-radius:12px}
+.pop.em{left:6%;bottom:40%;width:26%;animation-delay:.6s}
+.pop.bz{right:2%;bottom:36%;width:24%;animation-delay:1.2s}
+@media (prefers-reduced-motion:reduce){.flake,.pop{animation:none}}
+.cert{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 18px 40px rgba(58,20,70,.18);transform:rotate(-1.2deg)}
+.icards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.icard{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;color:inherit;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.icard:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(58,20,70,.12)}
+.icard img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.icard div{padding:16px 18px 20px}.icard h3{margin:0 0 6px}.icard p{margin:0;color:var(--muted);font-size:15px}
+.icard .go{display:inline-block;margin-top:10px;font-weight:700;color:var(--link)}
+@media (max-width:760px){.icards{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -60,65 +62,50 @@
 <details class="menu"><summary>Menu</summary><nav aria-label="Main"><div class="m-group"><a class="m-top" href="/class-information">Classes</a><a href="/class-information/class-levels-styles">Styles &amp; Levels</a><a href="/class-information/find-your-level">Find Your Level</a><a href="/class-information/acrobatic-arts">Acrobatic Arts</a><a href="/class-information/schedule">Schedule</a><a href="/class-information/uniform">Uniform</a></div><div class="m-group"><a class="m-top" href="/class-information/programs">Programs</a><a href="/class-information/programs#semester">Semester Classes</a><a href="/class-information/programs#teams">Teams</a><a href="/class-information/team-dancers">Team Dancers</a></div><div class="m-group"><a class="m-top" href="/tuition">Tuition</a><a href="/handbook">Handbook</a></div><div class="m-group"><a class="m-top" href="/class-information/recital-information">Recitals</a><a href="/about/recital-volunteer-info">Volunteer Team</a></div><div class="m-group"><a class="m-top" href="/about">About</a><a href="/about/staff">Staff</a><a href="/about/facilities">Studios</a><a href="/about/newsletters">Newsletters</a><a href="/contact-us">Contact</a></div><div class="m-group"><a class="m-top" href="/families">Families</a><a href="https://ignite-your-flare.helcim.app/login">Family Portal</a><a href="https://ignite-your-flare.helcim.app/quick-order">Studio Store</a><a href="/gift-cards">Gift Cards</a><a href="/handbook">Handbook</a><a href="/about/recital-volunteer-info">Volunteer Team</a><a href="/about/newsletters">Newsletters</a></div><a class="btn btn-primary btn-small" href="/contact-us#try-a-class" style="color:#fff;text-align:center;margin-top:6px">Get Started</a></nav></details>
 </div></header>
 <main id="main">
-<!-- WINTER ENROLLMENT LANDING PAGE for Meta/Google ads. Same HighLevel form as /contact-us; it redirects to /thank-you, which fires the Meta "Lead" and GA4 form_submission events. Keep the ad copy and this page in sync. noindex while the campaign runs. -->
-<div class="page-head"><div class="wrap split">
+<!-- WINTER ENROLLMENT LANDING PAGE for Meta/Google ads. Same HighLevel form as /contact-us; it redirects to /thank-you, which fires the Meta "Lead" and GA4 form_submission events. noindex while the campaign runs. -->
+<section class="hero-gift"><div class="wrap split" style="align-items:center">
 <div>
-<p class="small" style="font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:0 0 8px">Winter classes start in January</p>
+<p class="kick">Winter classes start in January</p>
 <h1>Give a gift they&rsquo;ll grow into</h1>
-<img class="cert" src="/images/gift-cards/dance-certificate.jpg?v=2" alt="Printable &quot;You're going to dance!&quot; gift card from Ignite Your Flare, with spaces for the dancer's name and who it's from" width="1400" height="1000" fetchpriority="high">
-<p class="cert-cap">Save your dancer&rsquo;s spot and we&rsquo;ll send this printable card to tuck under the tree. 🎄</p>
-<p class="lead" style="margin-top:18px">Skip one more toy this year. Give your dancer a new year of confidence, friendships and a bow on the State Theatre stage. Dance and acro classes for ages 1.5 and up in downtown Red Bluff.</p>
-<ul class="small" style="margin:18px 0 0;padding-left:20px;line-height:1.8">
+<p class="lead">Skip one more toy this year. Give a new year of confidence, friendships and new skills. Dance and acro classes for ages 1.5 and up in downtown Red Bluff.</p>
+<div class="actions" style="margin-top:24px"><a class="btn btn-primary" href="#save-a-spot">Save my dancer&rsquo;s spot</a><a class="btn btn-ghost" href="https://ignite-your-flare.helcim.app/quick-order?product=1365562" data-track="gift_card_click">Buy a gift card</a></div>
+<p class="small" style="margin-top:14px;opacity:.95">Gifting for someone else? Flare gift cards are $25 each and go toward classes. Plushies, scrunchies and more in our <a href="https://ignite-your-flare.helcim.app/quick-order" data-track="studio_store_click" style="color:#fff">Studio Store</a>.</p>
+</div>
+<div class="stage" aria-hidden="true">
+<div class="glow"></div>
+<img class="pop gc" src="/images/gift-cards/gift-card.jpg?v=4e4c9fd3" alt="">
+<img class="pop em" src="/images/gift-cards/ember.webp" alt="">
+<img class="pop bz" src="/images/gift-cards/blaze.webp" alt="">
+<div class="box"><div class="lid"><div class="bow"><i></i><i></i></div></div><div class="body"></div></div>
+</div>
+</div><script>(function(){var sec=document.querySelector('.hero-gift');for(var k=0;k<16;k++){var f=document.createElement('span');f.className='flake';f.textContent='\u2744';f.style.left=Math.random()*100+'%';f.style.top='-30px';f.style.fontSize=(12+Math.random()*18)+'px';f.style.animationDuration=(9+Math.random()*9)+'s';f.style.animationDelay=(-Math.random()*15)+'s';sec.appendChild(f);}})();</script></section>
+<section><div class="wrap"><div class="icards">
+<a class="icard" href="#save-a-spot"><img src="/images/semester/choreography.jpg" alt="Dancers in Flare uniforms learning choreography in the studio" loading="lazy"><div><h3>Ignite their new year</h3><p>A new skill, new friends and something to look forward to every week, starting right after the holidays.</p><span class="go">Save a spot &rarr;</span></div></a>
+<a class="icard" href="#save-a-spot"><img src="/images/gift-cards/dance-certificate.jpg?v=3" alt="Printable &quot;You're going to dance!&quot; card" loading="lazy" style="object-fit:contain;background:var(--wash);padding:12px"><div><h3>Wrap it up</h3><p>Save their spot now and we&rsquo;ll send a printable &ldquo;You&rsquo;re going to dance!&rdquo; card to tuck under the tree.</p><span class="go">Get the card &rarr;</span></div></a>
+<a class="icard" href="/tuition"><img src="/images/semester/recital.jpg" alt="Dancers in recital costumes" loading="lazy"><div><h3>No surprise fees</h3><p>Registration, recital costume, recital fee and more are built into one monthly price, about $105&ndash;$210/month for most dancers.</p><span class="go">See what&rsquo;s included &rarr;</span></div></a>
+</div></div></section>
+<section id="save-a-spot" style="scroll-margin-top:80px;padding-top:0"><div class="wrap split">
+<div>
+<h2>Save your dancer&rsquo;s spot</h2>
+<p class="muted">Takes about a minute. We&rsquo;ll text you the best-fit class and price, usually within one business day.</p>
+<img class="cert" src="/images/gift-cards/dance-certificate.jpg?v=3" alt="Printable &quot;You're going to dance!&quot; gift card from Ignite Your Flare, with spaces for the dancer's name and who it's from" width="1400" height="1000" style="margin:22px 0 10px">
+<p class="small muted">Save a spot and we&rsquo;ll send this printable card to tuck under the tree. 🎄</p>
+<ul class="small" style="margin:16px 0 0;padding-left:20px;line-height:1.8">
 <li>Classes run January to mid-May</li>
 <li>One all-inclusive monthly price: tuition, recital costume, recital fee and more</li>
-<li>About $105&ndash;$210/month for most dancers</li>
 <li>Spots are limited, and families who save a spot now get first pick of class times</li>
 </ul>
-<div class="actions" style="margin-top:22px"><a class="btn btn-primary" href="#save-a-spot">Save my dancer&rsquo;s spot</a><a class="btn btn-ghost" href="#gift-it">Gifting for someone else?</a></div>
 </div>
-<div id="save-a-spot">
-<h2 style="margin-top:0">Save your dancer&rsquo;s spot</h2>
-<p class="small muted">Takes about a minute. We&rsquo;ll text you the best-fit class and price, usually within one business day.</p>
+<div>
 <iframe id="lead-form" class="form-frame" src="https://api.leadconnectorhq.com/widget/form/x4t5LZi2RyUFdBjn34mq" title="Save your dancer's spot" style="width:100%;min-height:1500px;border:1px solid var(--line)" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-activation-type="alwaysActivated" data-deactivation-type="neverDeactivate" data-form-name="Tell Us About Your Dancer" data-height="1500" data-layout-iframe-id="inline-x4t5LZi2RyUFdBjn34mq" data-form-id="x4t5LZi2RyUFdBjn34mq"></iframe><script src="https://link.msgsndr.com/js/form_embed.js"></script>
 <p class="small muted" style="margin-top:14px">Form not loading? <a href="https://api.leadconnectorhq.com/widget/form/x4t5LZi2RyUFdBjn34mq" target="_blank" rel="noopener">Open it in a new tab</a> or <a href="sms:+15302554180">text (530) 255-4180</a>.</p>
 </div>
-</div></div>
-<section><div class="wrap"><div class="fgrid">
-<div class="fcard feature"><h3>Ignite their new year</h3><p>A new skill, new friends and something to look forward to every week, starting right after the holidays.</p></div>
-<div class="fcard"><h3>Wrap it up</h3><p>Save their spot now and surprise them on the big day. We&rsquo;ll send a printable &ldquo;You&rsquo;re going to dance!&rdquo; card to tuck under the tree.</p></div>
-<div class="fcard ombre"><h3>No surprise fees</h3><p>Registration, recital costume, recital fee and more are built into one monthly price. <a href="/tuition">See what&rsquo;s included</a>.</p></div>
-</div></div></section>
-<section id="gift-it" class="gift-sec"><div class="wrap split" style="align-items:center">
-<div class="stage" id="giftStage" role="button" tabindex="0" aria-label="Open the Flare gift box to see what's inside">
-<div class="glow"></div>
-<div class="goodie card" style="--w:36%;--fx:50%;--fy:47%;--r:-5deg;--d:.05s"><img class="pic" src="/images/gift-cards/gift-card.jpg?v=4e4c9fd3" alt="$25 Flare gift card" loading="lazy"><span>Gift cards &middot; $25</span></div>
-<div class="goodie" style="--w:24%;--fx:17%;--fy:66%;--r:-8deg;--d:.2s"><img class="pic" src="https://cloud-files.helcim.com/86a6fe27d48a475982c7bba00cba8e7f.jpg" alt="Flare Bird plushie" loading="lazy" style="object-position:50% 38%"><span>Flare Bird plushie</span></div>
-<div class="goodie" style="--w:22%;--fx:83%;--fy:68%;--r:7deg;--d:.3s"><img class="pic" src="https://cloud-files.helcim.com/8234de6656014701a5c92652e715e82f.jpg" alt="Flare scrunchie" loading="lazy"><span>Flare scrunchie</span></div>
-<div class="goodie" style="--w:22%;--fx:13%;--fy:30%;--r:5deg;--d:.4s"><img class="pic" src="/images/gift-cards/box-leotard.jpg?v=3" alt="Flare leotard" loading="lazy"><span>Flare leotard</span></div>
-<div class="goodie" style="--w:20%;--fx:87%;--fy:30%;--r:-6deg;--d:.5s"><img class="pic" src="/images/gift-cards/box-shorts.jpg" alt="Flare shorts" loading="lazy"><span>Flare shorts</span></div>
-<div class="box"><div class="lid"><div class="bow"><i></i><i></i></div></div><div class="body"></div></div>
-<button class="tap" type="button" id="giftTap">🎁 Tap to open</button>
-</div>
-<div><h2>Gifting for a dancer outside your home?</h2>
-<p class="lead" style="margin-top:12px">Fill a Flare gift box! Start with a gift card, then add a Flare Bird plushie, a Flare scrunchie and more from our Studio Store.</p>
-<ul class="small" style="margin:14px 0 0;padding-left:20px;line-height:1.8"><li>Gift cards are $25 each and go toward classes</li><li>Plushies, scrunchies and more in the Studio Store</li><li>Buy online in minutes</li></ul>
-<div class="actions" style="margin-top:22px"><a class="btn btn-primary" href="https://ignite-your-flare.helcim.app/quick-order?product=1365562" data-track="gift_card_click">Buy a gift card</a><a class="btn btn-ghost" href="https://ignite-your-flare.helcim.app/quick-order" data-track="studio_store_click">Shop the Studio Store</a></div>
-<p class="small" style="margin-top:12px">Questions? <a href="sms:+15302554180">Text (530) 255-4180</a>.</p></div>
-</div>
-<script>
-(function(){var st=document.getElementById('giftStage'),b=document.getElementById('giftTap'),sec=st.closest('section');
-for(var k=0;k<14;k++){var f=document.createElement('span');f.className='flake';f.textContent='\u2744';f.style.left=Math.random()*100+'%';f.style.top='-30px';f.style.fontSize=(12+Math.random()*16)+'px';f.style.animationDuration=(9+Math.random()*9)+'s';f.style.animationDelay=(-Math.random()*15)+'s';sec.appendChild(f);}
-function toggle(){var o=st.classList.toggle('open');b.textContent=o?'\u21BA Close the box':'\uD83C\uDF81 Tap to open';}
-st.addEventListener('click',toggle);st.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});
-if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){setTimeout(function(){if(!st.classList.contains('open'))toggle();},600);io.disconnect();}},{threshold:.5});io.observe(st);}else{toggle();}
-})();
-</script>
-</section>
+</div></section>
 </main>
 <footer class="site-foot"><div class="wrap">
 <div class="foot-grid">
 <div><img class="foot-mascot" src="/images/mascots/blaze-sticker.webp?v=936ad43d" alt="" width="64" height="85" loading="lazy">
-<p><strong style="color:#fff">Ignite Your Flare: Dance &amp; Acrobatics</strong><br>446 Walnut St.<br>Red Bluff, CA 96080</p>
+<p><strong style="color:#fff">Ignite Your Flare: Dance &amp; Acrobatics</strong><br>450 &amp; 446 Walnut St.<br>Red Bluff, CA 96080</p>
 <p class="small">Office: the sunset door on Jefferson St., around the corner from Studio 1.<br>Mailing: 859 Washington St. #68, Red Bluff, CA 96080</p></div>
 <div><h2>Hours</h2><ul class="small"><li>Mon 3:15 to 8:15 pm</li><li>Tue 4:00 to 8:15 pm</li><li>Wed 3:15 to 8:15 pm</li><li>Thu 3:45 to 8:15 pm</li><li>Fri to Sun: events only</li><li>August to May, select dates in June</li></ul></div>
 <div><h2>Reach us</h2><ul><li><a href="sms:+15302554180">Text (530) 255-4180</a></li><li><a href="tel:+15302554180">Call (530) 255-4180</a></li><li><a href="mailto:office@igniteyourflare.com">office@igniteyourflare.com</a></li><li><a href="https://maps.app.goo.gl/pQHjk3BdPhmXtDUr5">Get directions</a></li></ul></div>
